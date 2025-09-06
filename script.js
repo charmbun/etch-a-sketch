@@ -9,11 +9,12 @@ let eraserOn = false;
 let brushColor = "black";
 
 const grid = document.querySelector(".grid");
+const colorPicker = document.querySelector("#colorPicker");
 const sizeSetter = document.querySelector("#sizeSetter")
 const clearBtn = document.querySelector(".clearBtn")
 const brushBtn = document.querySelector(".brushBtn");
 const eraserBtn = document.querySelector(".eraserBtn");
-const colorPicker = document.querySelector("#colorPicker");
+const saveBtn = document.querySelector(".saveBtn")
 
 /* ===============================
    2. Functions
@@ -56,6 +57,10 @@ function color(cell) {
    3. Event Listeners
 ================================= */
 
+colorPicker.addEventListener("input", () => {
+    brushColor = colorPicker.value;
+})
+
 sizeSetter.addEventListener("input", () => {
     gridSize = sizeSetter.value;
     createGrid(gridSize);
@@ -74,8 +79,13 @@ brushBtn.addEventListener("click", () => {
     eraserOn = false;
 })
 
-colorPicker.addEventListener("input", () => {
-    brushColor = colorPicker.value;
+saveBtn.addEventListener("click", () => {
+    html2canvas(grid).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "etch-a-sketch.png";
+        link.href = canvas.toDataURL();
+        link.click();
+    });
 })
 
 /* ===============================

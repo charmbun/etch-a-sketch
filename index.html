@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script src="script.js" defer></script>
     <title>Etch-a-Sketch</title>
 </head>
 <body>
     <div id="container">
+        <input
+            type="color"
+            id="colorPicker"
+            value="#000000"/>
         <input
             type="range"
             id="sizeSetter"
@@ -19,7 +24,7 @@
         <button class="clearBtn">Clear</button>
         <button class="brushBtn">Brush</button>
         <button class="eraserBtn">Eraser</button>
-        <input type="color" id="colorPicker" value="#000000"/>
+        <button class="saveBtn">Save</button>
         <div class="grid">
         </div>
     </div>
