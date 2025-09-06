@@ -2,18 +2,18 @@
    1. Variables and Flags
 ================================= */
 
-const brushColor = "black";
-
 let gridSize = 16; 
 let cellSize = 500 / gridSize;
 let isMouseDown = false;
 let eraserOn = false;
+let brushColor = "black";
 
 const grid = document.querySelector(".grid");
 const setSizeBtn = document.querySelector(".setSizeBtn");
 const clearBtn = document.querySelector(".clearBtn")
 const brushBtn = document.querySelector(".brushBtn");
 const eraserBtn = document.querySelector(".eraserBtn");
+const colorPicker = document.querySelector("#colorPicker");
 
 /* ===============================
    2. Functions
@@ -85,6 +85,10 @@ eraserBtn.addEventListener("click", () => {
 
 brushBtn.addEventListener("click", () => {
     eraserOn = false;
+})
+
+colorPicker.addEventListener("input", () => {
+    brushColor = colorPicker.value;
 })
 
 /* ===============================
