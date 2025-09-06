@@ -9,7 +9,7 @@ let eraserOn = false;
 let brushColor = "black";
 
 const grid = document.querySelector(".grid");
-const setSizeBtn = document.querySelector(".setSizeBtn");
+const sizeSetter = document.querySelector("#sizeSetter")
 const clearBtn = document.querySelector(".clearBtn")
 const brushBtn = document.querySelector(".brushBtn");
 const eraserBtn = document.querySelector(".eraserBtn");
@@ -56,23 +56,10 @@ function color(cell) {
    3. Event Listeners
 ================================= */
 
-setSizeBtn.addEventListener("click", () => {
-    const input = prompt("Enter the size of the grid");
-    newSize = Number(input);
-
-    if (!input || isNaN(newSize)) {
-        alert("Please enter a valid number.")
-        return;
-    }
-
-    if (newSize <= 0 || newSize > 100){
-        alert("Only enter numbers between 1 and 100.");
-        return;
-    }
-    
-    gridSize = newSize;
+sizeSetter.addEventListener("input", () => {
+    gridSize = sizeSetter.value;
     createGrid(gridSize);
-});
+})
 
 clearBtn.addEventListener("click", () => {
     const cells= grid.querySelectorAll(".cell");

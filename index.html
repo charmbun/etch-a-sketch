@@ -9,11 +9,17 @@
 </head>
 <body>
     <div id="container">
-        <button class="setSizeBtn">Set Size</button>
+        <input
+            type="range"
+            id="sizeSetter"
+            min="8"
+            max="80"
+            value="16"
+            step="8"/>
         <button class="clearBtn">Clear</button>
         <button class="brushBtn">Brush</button>
         <button class="eraserBtn">Eraser</button>
-        <input type="color" id="colorPicker" value="#000000">
+        <input type="color" id="colorPicker" value="#000000"/>
         <div class="grid">
         </div>
     </div>
