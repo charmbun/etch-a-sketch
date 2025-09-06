@@ -2,13 +2,16 @@
    1. Variables and Flags
 ================================= */
 
+const defaultColor = "white";
+const paintColor = "black";
+
 let gridSize = 16; 
 let cellSize = 500 / gridSize;
-
 let isMouseDown = false;
 
 const grid = document.querySelector(".grid");
 const setSizeBtn = document.querySelector(".setSizeBtn");
+const clearBtn = document.querySelector(".clearBtn")
 
 /* ===============================
    2. Functions
@@ -26,16 +29,13 @@ function createGrid(gridSize) {
 
         cell.addEventListener("mousedown", () => {
             isMouseDown = true;
-            cell.style.backgroundColor = "black";
+            cell.style.backgroundColor = paintColor;
         })
-
         cell.addEventListener("mouseover", () => {
-            // color the cell
             if (isMouseDown === true) {
-                cell.style.backgroundColor = "black";
+                cell.style.backgroundColor = paintColor;
             }
         })
-
         cell.addEventListener("mouseup", () => {
             isMouseDown = false;
         })
@@ -47,8 +47,6 @@ function createGrid(gridSize) {
 /* ===============================
    3. Event Listeners
 ================================= */
-
-
 
 setSizeBtn.addEventListener("click", () => {
     const input = prompt("Enter the size of the grid");
@@ -67,6 +65,11 @@ setSizeBtn.addEventListener("click", () => {
     gridSize = newSize;
     createGrid(gridSize);
 });
+
+clearBtn.addEventListener("click", () => {
+    const cells= grid.querySelectorAll(".cell");
+    cells.forEach(cell => cell.style.backgroundColor = defaultColor);
+})
 
 /* ===============================
    4. On StartUp
