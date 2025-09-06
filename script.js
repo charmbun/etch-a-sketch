@@ -1,9 +1,11 @@
 /* ===============================
-   1. Variables 
+   1. Variables and Flags
 ================================= */
 
-let gridSize = 4; 
+let gridSize = 16; 
 let cellSize = 500 / gridSize;
+
+let isMouseDown = false;
 
 const grid = document.querySelector(".grid");
 const setSizeBtn = document.querySelector(".setSizeBtn");
@@ -21,6 +23,23 @@ function createGrid(gridSize) {
         cell.classList.add("cell");
         cell.style.width = `${cellSize}px`;
         cell.style.height = `${cellSize}px`;
+
+        cell.addEventListener("mousedown", () => {
+            isMouseDown = true;
+            cell.style.backgroundColor = "black";
+        })
+
+        cell.addEventListener("mouseover", () => {
+            // color the cell
+            if (isMouseDown === true) {
+                cell.style.backgroundColor = "black";
+            }
+        })
+
+        cell.addEventListener("mouseup", () => {
+            isMouseDown = false;
+        })
+
         grid.appendChild(cell);
     }
 }
@@ -28,6 +47,8 @@ function createGrid(gridSize) {
 /* ===============================
    3. Event Listeners
 ================================= */
+
+
 
 setSizeBtn.addEventListener("click", () => {
     const input = prompt("Enter the size of the grid");
