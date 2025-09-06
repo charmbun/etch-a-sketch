@@ -2,7 +2,6 @@
    1. Variables and Flags
 ================================= */
 
-const defaultColor = "white";
 const brushColor = "black";
 
 let gridSize = 16; 
@@ -47,7 +46,7 @@ function createGrid(gridSize) {
 
 function color(cell) {
     if (eraserOn === true){
-        cell.style.backgroundColor = defaultColor;
+        cell.style.backgroundColor = "";
     } else {
         cell.style.backgroundColor = brushColor;
     }
@@ -77,7 +76,7 @@ setSizeBtn.addEventListener("click", () => {
 
 clearBtn.addEventListener("click", () => {
     const cells= grid.querySelectorAll(".cell");
-    cells.forEach(cell => cell.style.backgroundColor = defaultColor);
+    cells.forEach(cell => cell.style.backgroundColor = "");
 })
 
 eraserBtn.addEventListener("click", () => {
