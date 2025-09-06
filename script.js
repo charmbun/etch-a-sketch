@@ -3,15 +3,18 @@
 ================================= */
 
 const defaultColor = "white";
-const paintColor = "black";
+const brushColor = "black";
 
 let gridSize = 16; 
 let cellSize = 500 / gridSize;
 let isMouseDown = false;
+let eraserOn = false;
 
 const grid = document.querySelector(".grid");
 const setSizeBtn = document.querySelector(".setSizeBtn");
 const clearBtn = document.querySelector(".clearBtn")
+const brushBtn = document.querySelector(".brushBtn");
+const eraserBtn = document.querySelector(".eraserBtn");
 
 /* ===============================
    2. Functions
@@ -29,18 +32,24 @@ function createGrid(gridSize) {
 
         cell.addEventListener("mousedown", () => {
             isMouseDown = true;
-            cell.style.backgroundColor = paintColor;
+            color(cell);
         })
         cell.addEventListener("mouseover", () => {
-            if (isMouseDown === true) {
-                cell.style.backgroundColor = paintColor;
-            }
+            if (isMouseDown === true) color(cell);
         })
         cell.addEventListener("mouseup", () => {
             isMouseDown = false;
         })
 
         grid.appendChild(cell);
+    }
+}
+
+function color(cell) {
+    if (eraserOn === true){
+        cell.style.backgroundColor = defaultColor;
+    } else {
+        cell.style.backgroundColor = brushColor;
     }
 }
 
@@ -69,6 +78,14 @@ setSizeBtn.addEventListener("click", () => {
 clearBtn.addEventListener("click", () => {
     const cells= grid.querySelectorAll(".cell");
     cells.forEach(cell => cell.style.backgroundColor = defaultColor);
+})
+
+eraserBtn.addEventListener("click", () => {
+    eraserOn = true;
+})
+
+brushBtn.addEventListener("click", () => {
+    eraserOn = false;
 })
 
 /* ===============================
