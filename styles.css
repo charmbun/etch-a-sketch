@@ -1,0 +1,15 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.cell {
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.cell:hover {
+    background-color: black;
+}
