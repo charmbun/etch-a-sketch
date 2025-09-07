@@ -2,11 +2,11 @@
    1. Variables and Flags
 ================================= */
 
-let gridSize = 32; 
+let gridSize;
+let brushColor;
 let cellSize = 500 / gridSize;
 let isMouseDown = false;
 let eraserOn = false;
-let brushColor = "#C26B86";
 
 const grid = document.querySelector(".grid");
 const colorPicker = document.querySelector("#color-picker");
@@ -58,27 +58,21 @@ function color(cell) {
    3. Event Listeners
 ================================= */
 
-colorPicker.addEventListener("input", () => {
-    brushColor = colorPicker.value;
+brushBtn.addEventListener("click", () => {
+    eraserOn = false;
+    brushBtn.classList.add("active-tool");
+    eraserBtn.classList.remove("active-tool");
 })
 
-sizeSetter.addEventListener("input", () => {
-    gridSize = sizeSetter.value;
-    sizeValue.textContent = `${gridSize}x${gridSize}`;
-    createGrid(gridSize);
+eraserBtn.addEventListener("click", () => {
+    eraserOn = true;
+    eraserBtn.classList.add("active-tool");
+    brushBtn.classList.remove("active-tool");
 })
 
 clearBtn.addEventListener("click", () => {
     const cells= grid.querySelectorAll(".cell");
     cells.forEach(cell => cell.style.backgroundColor = "");
-})
-
-eraserBtn.addEventListener("click", () => {
-    eraserOn = true;
-})
-
-brushBtn.addEventListener("click", () => {
-    eraserOn = false;
 })
 
 saveBtn.addEventListener("click", () => {
@@ -90,8 +84,29 @@ saveBtn.addEventListener("click", () => {
     });
 })
 
+colorPicker.addEventListener("input", () => {
+    brushColor = colorPicker.value;
+})
+
+sizeSetter.addEventListener("input", () => {
+    gridSize = sizeSetter.value;
+    sizeValue.textContent = `${gridSize}x${gridSize}`;
+    createGrid(gridSize);
+})
+
 /* ===============================
-   4. On StartUp
+   4. Initialization
 ================================= */
 
-createGrid(gridSize);
+function init() {
+    
+    gridSize = 32;
+    createGrid(gridSize);
+
+    sizeValue.textContent = `${gridSize}x${gridSize}`;
+
+    brushBtn.classList.add("active-tool");
+    brushColor = "#FFB3CF";
+}
+
+document.addEventListener("DOMContentLoaded", init);
