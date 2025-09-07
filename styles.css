@@ -18,6 +18,10 @@
    Window
 ================================= */
 
+body {
+    background: linear-gradient(135deg, #FFEDEF 0%, #BBDBFC 100%);
+}
+
 #container {
     display: flex;
     justify-content: center;
