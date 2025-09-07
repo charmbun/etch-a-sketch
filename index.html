@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&family=Tiny5&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script src="script.js" defer></script>
@@ -10,22 +11,58 @@
 </head>
 <body>
     <div id="container">
-        <input
-            type="color"
-            id="colorPicker"
-            value="#000000"/>
-        <input
-            type="range"
-            id="sizeSetter"
-            min="8"
-            max="80"
-            value="16"
-            step="8"/>
-        <button class="clearBtn">Clear</button>
-        <button class="brushBtn">Brush</button>
-        <button class="eraserBtn">Eraser</button>
-        <button class="saveBtn">Save</button>
-        <div class="grid">
+        <div class="window">
+            <div class="header">
+                <h1>ETCH-A-SKETCH</h1>
+                <div class="window-buttons">
+                    <div class="circle" style="background-color: #FFE5A0;"></div>
+                    <div class="circle" style="background-color: #ABEF8D;"></div>
+                    <div class="circle" style="background-color: #FFB3CF;"></div>
+                </div>
+            </div>
+            <div class="workspace">
+                <div class="flex">
+                    <div class="buttons">
+                        <button class="brush-btn">
+                            <img src="images/UI/brush.png">
+                            BRUSH
+                        </button>
+                        <button class="eraser-btn">
+                            <img src="images/UI/eraser.png">
+                            ERASER
+                        </button>
+                        <button class="clear-btn">
+                            <img src="images/UI/clear.png " style="width: 45px;">
+                            CLEAR
+                        </button>
+                        <button class="save-btn">
+                            <img src="images/UI/save.png" style="width: 35px;">
+                            SAVE
+                        </button>
+                    </div>
+                    <div class="grid">
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="color-container">
+                        <input
+                            type="color"
+                            id="color-picker"
+                            value="#C26B86"/>
+                    </div>
+                    <div class="size-container">
+                        <input
+                            type="range"
+                            id="size-setter"
+                            min="8"
+                            max="80"
+                            value="16"
+                            step="8"/>
+                        <p><output id="size-value">16x16</output></p>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </body>

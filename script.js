@@ -2,19 +2,20 @@
    1. Variables and Flags
 ================================= */
 
-let gridSize = 16; 
+let gridSize = 32; 
 let cellSize = 500 / gridSize;
 let isMouseDown = false;
 let eraserOn = false;
-let brushColor = "black";
+let brushColor = "#C26B86";
 
 const grid = document.querySelector(".grid");
-const colorPicker = document.querySelector("#colorPicker");
-const sizeSetter = document.querySelector("#sizeSetter")
-const clearBtn = document.querySelector(".clearBtn")
-const brushBtn = document.querySelector(".brushBtn");
-const eraserBtn = document.querySelector(".eraserBtn");
-const saveBtn = document.querySelector(".saveBtn")
+const colorPicker = document.querySelector("#color-picker");
+const sizeSetter = document.querySelector("#size-setter")
+const sizeValue = document.querySelector("#size-value");
+const clearBtn = document.querySelector(".clear-btn")
+const brushBtn = document.querySelector(".brush-btn");
+const eraserBtn = document.querySelector(".eraser-btn");
+const saveBtn = document.querySelector(".save-btn")
 
 /* ===============================
    2. Functions
@@ -63,6 +64,7 @@ colorPicker.addEventListener("input", () => {
 
 sizeSetter.addEventListener("input", () => {
     gridSize = sizeSetter.value;
+    sizeValue.textContent = `${gridSize}x${gridSize}`;
     createGrid(gridSize);
 })
 
