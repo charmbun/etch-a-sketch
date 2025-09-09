@@ -1,12 +1,10 @@
 # Etch-a-Sketch
 
-A browser-based **Etch-a-Sketch** app built with HTML, CSS, and JavaScript.
+A browser-based **Etch-a-Sketch** app built with **HTML, CSS, and JavaScript**.
 
 Originally developed as part of [The Odin Project Foundations](https://www.theodinproject.com/paths/foundations/courses/foundations) curriculum, this version is enhanced with extra tools, color selection, grid customization, and artwork saving.
 
 ## Features
-
-Features
 
 - 🖌️ Brush Tool – Draw on the grid with a selectable color.
 - 🩹 Eraser Tool – Remove parts of the drawing.
