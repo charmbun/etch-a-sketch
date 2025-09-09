@@ -1,8 +1,8 @@
-# 🎮 Etch-a-Sketch
+# Etch-a-Sketch
 
 A browser-based **Etch-a-Sketch** app built with HTML, CSS, and JavaScript.
 
-Originally developed as part of [The Odin Project Foundations](https://www.theodinproject.com/paths/foundations/courses/foundations) curriculum, this version is enhanced with ...
+Originally developed as part of [The Odin Project Foundations](https://www.theodinproject.com/paths/foundations/courses/foundations) curriculum, this version is enhanced with extra tools, color selection, grid customization, and artwork saving.
 
 ## Features
 
