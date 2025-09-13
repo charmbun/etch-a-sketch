@@ -6,12 +6,12 @@ Originally developed as part of [The Odin Project Foundations](https://www.theod
 
 ## Features
 
-- 🖌️ Brush Tool – Draw on the grid with a selectable color.
-- 🩹 Eraser Tool – Remove parts of the drawing.
-- 🎨 Color Picker – Choose any brush color.
-- 🔲 Resizable Grid – Change grid size (up to 100×100).
-- ♻️ Clear Button – Reset the entire canvas.
-- 💾 Save Artwork – Export your creation as a PNG file.
+- **Brush Tool** – Draw on the grid with a selectable color.
+- **Eraser Tool** – Remove parts of the drawing.
+- **Color Picker** – Choose any brush color.
+- **Resizable Grid** – Change grid size (up to 100×100).
+- **Clear Button** – Reset the entire canvas.
+- **Save Artwork** – Export your creation as a PNG file.
 
 ## Preview
 
